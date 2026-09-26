@@ -1,10 +1,9 @@
 # Online Cinema API
 
-A modern, production-ready REST API for an online cinema platform built with **FastAPI**, **PostgreSQL**, **SQLAlchemy 2.0**
-, and **Docker**. Features user authentication, movie management, shopping cart, orders, payments (Stripe), and an admin pan
-el.
+A modern, production-ready REST API for an online cinema platform built with **FastAPI**, **PostgreSQL**, **SQLAlchemy 2.0**, and
+**Docker**. Features user authentication, movie management, shopping cart, orders, payments (Stripe), and an admin panel.
 
-## ? Features
+## 🚀 Features
 
 ### Core Functionality
 - **User Management**: Registration, JWT authentication (access/refresh tokens), email verification, password reset
@@ -25,7 +24,7 @@ el.
 - **API Documentation**: Auto-generated OpenAPI/Swagger UI
 - **Code Quality**: Ruff linting, MyPy type checking, pre-commit hooks
 
-## ? Tech Stack
+## 🛠 Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -48,62 +47,62 @@ el.
 | **Type Checking** | MyPy |
 | **Testing** | pytest + pytest-asyncio |
 
-## ? Project Structure
+## 📁 Project Structure
 
 ```
 online-cinema/
-??? alembic/                 # Database migrations
-?   ??? migrations/          # Migration scripts
-?   ??? env.py               # Alembic environment
-??? commands/                # Shell scripts for Docker entrypoints
-?   ??? run_migration.sh     # Run Alembic migrations
-?   ??? run_web_server_dev.sh
-?   ??? run_web_server_prod.sh
-?   ??? setup_minio.sh       # MinIO bucket setup
-?   ??? deploy.sh
-??? configs/
-?   ??? nginx/               # Nginx configuration
-??? docker/                  # Dockerfiles for services
-?   ??? minio_mc/
-?   ??? nginx/
-?   ??? tests/
-??? docs/
-?   ??? development.md       # Development setup guide
-??? src/
-?   ??? admin/               # SQLAdmin panel setup
-?   ??? api/
-?   ?   ??? dependencies.py  # FastAPI dependencies (auth, pagination, etc.)
-?   ?   ??? exceptions.py    # Custom exception handlers
-?   ?   ??? v1/              # API v1 endpoints
-?   ?       ??? api.py       # Router aggregation
-?   ?       ??? movies.py    # Movies, genres, stars, directors, ratings, comments
-?   ?       ??? users.py     # Auth, profiles, avatars
-?   ?       ??? orders.py    # Orders, cart
-?   ?       ??? payments.py  # Stripe integration
-?   ??? core/
-?   ?   ??? config.py        # Pydantic settings
-?   ?   ??? database.py      # SQLAlchemy async engine/session
-?   ?   ??? celery.py        # Celery app configuration
-?   ??? exceptions/          # Domain-specific exceptions
-?   ??? models/              # SQLAlchemy models
-?   ?   ??? users.py         # User, Profile, Groups
-?   ?   ??? movies.py        # Movie, Genre, Star, Director, Rating, Comment, Like, Favorite
-?   ?   ??? orders.py        # Order, OrderItem, Cart
-?   ?   ??? payments.py      # Payment records
-?   ?   ??? tokens.py        # Activation, reset, refresh tokens
-?   ??? main.py              # FastAPI app factory
-??? docker-compose.yml       # Development environment
-??? docker-compose-prod.yml  # Production environment
-??? docker-compose-tests.yml # Test environment
-??? Dockerfile               # Multi-stage build
-??? pyproject.toml           # Project config (dependencies, tools)
-??? pytest.ini
-??? ruff.toml
-??? .env.sample              # Environment variables template
-??? README.md
+├── alembic/                 # Database migrations
+│   ├── migrations/          # Migration scripts
+│   └── env.py               # Alembic environment
+├── commands/                # Shell scripts for Docker entrypoints
+│   ├── run_migration.sh     # Run Alembic migrations
+│   ├── run_web_server_dev.sh
+│   ├── run_web_server_prod.sh
+│   ├── setup_minio.sh       # MinIO bucket setup
+│   └── deploy.sh
+├── configs/
+│   └── nginx/               # Nginx configuration
+├── docker/                  # Dockerfiles for services
+│   ├── minio_mc/
+│   ├── nginx/
+│   └── tests/
+├── docs/
+│   └── development.md       # Development setup guide
+├── src/
+│   ├── admin/               # SQLAdmin panel setup
+│   ├── api/
+│   │   ├── dependencies.py  # FastAPI dependencies (auth, pagination, etc.)
+│   │   ├── exceptions.py    # Custom exception handlers
+│   │   └── v1/              # API v1 endpoints
+│   │       ├── api.py       # Router aggregation
+│   │       ├── movies.py    # Movies, genres, stars, directors, ratings, comments
+│   │       ├── users.py     # Auth, profiles, avatars
+│   │       ├── orders.py    # Orders, cart
+│   │       └── payments.py  # Stripe integration
+│   ├── core/
+│   │   ├── config.py        # Pydantic settings
+│   │   ├── database.py      # SQLAlchemy async engine/session
+│   │   └── celery.py        # Celery app configuration
+│   ├── exceptions/          # Domain-specific exceptions
+│   ├── models/              # SQLAlchemy models
+│   │   ├── users.py         # User, Profile, Groups
+│   │   ├── movies.py        # Movie, Genre, Star, Director, Rating, Comment, Like, Favorite
+│   │   ├── orders.py        # Order, OrderItem, Cart
+│   │   ├── payments.py      # Payment records
+│   │   └── tokens.py        # Activation, reset, refresh tokens
+│   └── main.py              # FastAPI app factory
+├── docker-compose.yml       # Development environment
+├── docker-compose-prod.yml  # Production environment
+├── docker-compose-tests.yml # Test environment
+├── Dockerfile               # Multi-stage build
+├── pyproject.toml           # Project config (dependencies, tools)
+├── pytest.ini
+├── ruff.toml
+├── .env.sample              # Environment variables template
+└── README.md
 ```
 
-## ? Quick Start (Development)
+## 🏁 Quick Start (Development)
 
 ### Prerequisites
 - Docker & Docker Compose
@@ -123,21 +122,21 @@ docker-compose up -d --build
 ```
 
 This starts:
-- **API** ? `http://localhost:8000`
-- **API Docs (Swagger)** ? `http://localhost:8000/docs`
-- **API Docs (ReDoc)** ? `http://localhost:8000/redoc`
-- **Admin Panel** ? `http://localhost:8000/admin`
-- **PostgreSQL** ? `localhost:5432`
-- **Redis** ? `localhost:6379`
-- **MailHog (Email UI)** ? `http://localhost:8025`
-- **Flower (Celery Monitor)** ? `http://localhost:5555`
+- **API** → `http://localhost:8000`
+- **API Docs (Swagger)** → `http://localhost:8000/docs`
+- **API Docs (ReDoc)** → `http://localhost:8000/redoc`
+- **Admin Panel** → `http://localhost:8000/admin`
+- **PostgreSQL** → `localhost:5432`
+- **Redis** → `localhost:6379`
+- **MailHog (Email UI)** → `http://localhost:8025`
+- **Flower (Celery Monitor)** → `http://localhost:5555`
 
 ### 3. Run Migrations (if needed)
 ```bash
 docker-compose exec api alembic upgrade head
 ```
 
-## ? Local Development (Without Docker)
+## 🔧 Local Development (Without Docker)
 
 ### Setup
 ```bash
@@ -179,7 +178,7 @@ celery -A core.celery worker --loglevel=INFO
 celery -A core.celery beat --loglevel=INFO
 ```
 
-## ? Testing
+## 🧪 Testing
 
 ```bash
 # Run all tests
@@ -192,7 +191,7 @@ uv run pytest
 uv run pytest --cov=src --cov-report=html
 ```
 
-## ? API Endpoints
+## 📚 API Endpoints
 
 Base URL: `http://localhost:8000/api/v1`
 
@@ -251,7 +250,7 @@ Base URL: `http://localhost:8000/api/v1`
 | POST | `/payments/create-checkout-session` | Create Stripe checkout session |
 | POST | `/payments/webhook` | Stripe webhook handler |
 
-## ?? Environment Variables
+## ⚙️ Environment Variables
 
 Copy `.env.sample` to `.env` and configure:
 
@@ -289,7 +288,7 @@ Copy `.env.sample` to `.env` and configure:
 | `CELERY_BROKER_URL` | Redis broker URL | `redis://redis:6379/0` |
 | `CELERY_RESULT_BACKEND` | Redis result backend | `redis://redis:6379/0` |
 
-## ? Production Deployment
+## 🏭 Production Deployment
 
 ### 1. Prepare Environment
 ```bash
@@ -317,7 +316,7 @@ Production stack includes:
 docker-compose -f docker-compose-prod.yml exec migrator /commands/run_migration.sh
 ```
 
-## ? Admin Panel
+## 🛡 Admin Panel
 
 Access at `http://localhost:8000/admin` (development) or your domain `/admin` (production).
 
@@ -331,7 +330,7 @@ Features:
 - Order & Payment monitoring
 - Comment moderation
 
-## ? Security Notes
+## 🔐 Security Notes
 
 - **Change all default secrets** in production (`TOKEN_SECRET_KEY`, `POSTGRES_PASSWORD`, `STRIPE_SECRET_KEY`, etc.)
 - Use **HTTPS** in production (configure SSL in Nginx)
@@ -340,7 +339,7 @@ Features:
 - Rotate JWT secrets periodically
 - Use strong passwords for all services
 
-## ? Useful Commands
+## 📦 Useful Commands
 
 ### Database
 ```bash
@@ -387,11 +386,11 @@ docker-compose up -d --build api
 docker-compose down -v  # removes volumes!
 ```
 
-## ? License
+## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## ? Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -401,5 +400,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-**Built with ?? using FastAPI, PostgreSQL, and Docker**
- No newline at end of file
+**Built with ❤️ using FastAPI, PostgreSQL, and Docker**
